@@ -1,0 +1,234 @@
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	      http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	
+<!--  <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 
+	2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd" >  -->
+
+	<display-name>MIS Spring Maven Project</display-name>
+
+	<listener>
+   <listener-class>
+      org.springframework.web.context.ContextLoaderListener
+   </listener-class>
+	</listener>
+	<listener>
+		<listener-class>Apple.listener.UserListener</listener-class>
+	</listener>
+	
+	<context-param>
+      <param-name>contextClass</param-name>
+      <param-value>
+         org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+      </param-value>
+   </context-param>
+   <context-param>
+   <param-name>contextConfigLocation</param-name>
+   <param-value>org.baeldung.spring.web.config org.baeldung.spring.persistence.config</param-value>
+</context-param>
+
+ <!-- Spring Security -->
+  <!--  <filter>
+      <filter-name>springSecurityFilterChain</filter-name>
+      <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+   </filter>
+   <filter-mapping>
+      <filter-name>springSecurityFilterChain</filter-name>
+      <url-pattern>/*</url-pattern>
+   </filter-mapping>
+   
+    -->
+
+	<servlet>
+    <servlet-name>spring</servlet-name>
+    <servlet-class>
+      org.springframework.web.servlet.DispatcherServlet
+    </servlet-class>
+   	 <init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring-config.xml</param-value>
+	</init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+	<servlet>
+		<description>
+		</description>
+		<display-name>UserServlet</display-name>
+		<servlet-name>UserServlet</servlet-name>
+		<servlet-class>Apple.servlet.UserServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description>
+		</description>
+		<display-name>HelloController</display-name>
+		<servlet-name>HelloController</servlet-name>
+		<servlet-class>Apple.controller.HelloController</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description>
+		</description>
+		<display-name>HomeServlet</display-name>
+		<servlet-name>HomeServlet</servlet-name>
+		<servlet-class>Apple.servlet.HomeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>LoginServlet</display-name>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>Apple.servlet.LoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>LogoutServlet</display-name>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>Apple.servlet.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>MovieSearchServlet</display-name>
+		<servlet-name>MovieSearchServlet</servlet-name>
+		<servlet-class>Apple.servlet.MovieSearchServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ShowMovieServlet</display-name>
+		<servlet-name>ShowMovieServlet</servlet-name>
+		<servlet-class>Apple.servlet.ShowMovieServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>MovieDescriptionServlet</display-name>
+		<servlet-name>MovieDescriptionServlet</servlet-name>
+		<servlet-class>Apple.servlet.MovieDescriptionServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>SignUpServlet</display-name>
+		<servlet-name>SignUpServlet</servlet-name>
+		<servlet-class>Apple.servlet.SignUpServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>SubscribeServlet</display-name>
+		<servlet-name>SubscribeServlet</servlet-name>
+		<servlet-class>Apple.servlet.SubscribeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>EditUserServlet</display-name>
+		<servlet-name>EditUserServlet</servlet-name>
+		<servlet-class>Apple.servlet.EditUserServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>AdminServlet</display-name>
+		<servlet-name>AdminServlet</servlet-name>
+		<servlet-class>Apple.servlet.AdminServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>UpdateUserServlet</display-name>
+		<servlet-name>UpdateUserServlet</servlet-name>
+		<servlet-class>Apple.servlet.UpdateUserServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>DeleteUserServlet</display-name>
+		<servlet-name>DeleteUserServlet</servlet-name>
+		<servlet-class>Apple.servlet.DeleteUserServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>AdminAddUserServlet</display-name>
+		<servlet-name>AdminAddUserServlet</servlet-name>
+		<servlet-class>Apple.servlet.AdminAddUserServlet</servlet-class>
+	</servlet>
+  
+
+    
+ 	<servlet-mapping>
+   		<servlet-name>HomeServlet</servlet-name>
+    	<url-pattern>/home</url-pattern>
+    </servlet-mapping>
+ 	<servlet-mapping>
+ 		<servlet-name>LoginServlet</servlet-name>
+ 		<url-pattern>/login</url-pattern>
+ 	</servlet-mapping>
+ 	<servlet-mapping>
+ 		<servlet-name>LogoutServlet</servlet-name>
+ 		<url-pattern>/logout</url-pattern>
+ 	</servlet-mapping>
+ 	<servlet-mapping>
+ 		<servlet-name>MovieSearchServlet</servlet-name>
+ 		<url-pattern>/moviesearch</url-pattern>
+ 	</servlet-mapping>
+ 	<servlet-mapping>
+ 		<servlet-name>ShowMovieServlet</servlet-name>
+ 		<url-pattern>/ShowMovieServlet</url-pattern>
+ 	</servlet-mapping>
+ 	<servlet-mapping>
+ 		<servlet-name>MovieDescriptionServlet</servlet-name>
+ 		<url-pattern>/movie</url-pattern>
+ 	</servlet-mapping>
+ 	<servlet-mapping>
+ 		<servlet-name>SignUpServlet</servlet-name>
+ 		<url-pattern>/signup</url-pattern>
+ 	</servlet-mapping>
+ 	<servlet-mapping>
+    	<servlet-name>UserServlet</servlet-name>
+    	<url-pattern>/user-account</url-pattern>
+    </servlet-mapping>
+ 	<servlet-mapping>
+ 		<servlet-name>SubscribeServlet</servlet-name>
+ 		<url-pattern>/subscribe</url-pattern>
+ 	</servlet-mapping>
+ 	<servlet-mapping>
+ 		<servlet-name>EditUserServlet</servlet-name>
+ 		<url-pattern>/edituser</url-pattern>
+ 	</servlet-mapping>
+ 	<servlet-mapping>
+ 		<servlet-name>AdminServlet</servlet-name>
+ 		<url-pattern>/admin-account</url-pattern>
+ 	</servlet-mapping>
+ 	<servlet-mapping>
+ 		<servlet-name>UpdateUserServlet</servlet-name>
+ 		<url-pattern>/updateuser</url-pattern>
+ 	</servlet-mapping>
+ 	<servlet-mapping>
+ 		<servlet-name>DeleteUserServlet</servlet-name>
+ 		<url-pattern>/deleteuser</url-pattern>
+ 	</servlet-mapping>
+ 	<servlet-mapping>
+ 		<servlet-name>AdminAddUserServlet</servlet-name>
+ 		<url-pattern>/admin-adduser</url-pattern>
+ 	</servlet-mapping>
+ 
+
+    <session-config>
+    <session-timeout>
+      30
+    </session-timeout>
+    </session-config>
+    
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
+

@@ -1,0 +1,508 @@
+/* Page Specific Globals */
+body {
+    color: #929292;
+    background-color: #ebebeb;
+}
+
+h4 {
+    text-transform: none;
+}
+
+.printer-friendly {
+    text-align: right;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Chain Filter Module, MLP specific */
+.chain-filter-module {
+    text-transform: uppercase;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.chain-filter {
+    border: 1px solid #ebebeb;
+    overflow: hidden;
+}
+
+.chain-filter-theater {
+    background-color: #ff7900;
+    width: 60%;
+    float: left;
+    padding: 14px 20px;
+    border-right: 1px solid #ebebeb;
+}
+
+.chain-filter-show-all {
+    width: 40%;
+    float: right;
+    padding: 14px 20px;
+    font-size: 14px;
+    margin: 0;
+}
+
+.no-showtimes {
+    background-color: #ff7900;
+    border: 1px solid #ebebeb;
+    padding: 14px 20px;
+}
+
+/* MLP Movie Details in modules/moviedetails/moviedetails.css */
+
+/* ---------------- */
+/* Showtimes Module */
+/* ---------------- */
+
+/* Theater module, Repeater [3] */
+.showtimes-theater {
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+}
+
+/* Showtimes for a specific format, may include diff amenities, Repeater [2] */
+.showtimes-theater-times-area {
+    border-bottom: 1px solid #ccc;
+    padding: 15px 20px 0px 15px;
+    background-color: white;
+}
+
+/* Border Logic */
+
+.showtimes-movie-container-mlp:last-child .showtimes-theater-times-area {
+    /* MLP IMAX case. TSP/TLP Have separate IMAX movie posters */
+    border-bottom: none;
+}
+
+.showtimes-movie-container .showtimes-theater-times-area:last-child {
+    /* TSP/TLP prevent extra border from showing since container has border already */
+    border-bottom: none;
+}
+
+/* Single set of showtimes, specific format, specific amenity, Repeater [1] */
+.showtimes-times-area {
+    padding-bottom: 15px;
+}
+
+/* Theater Header */
+.showtimes-theater-header {
+    background-color: #262626;
+    padding: 0px 10px 5px 15px;
+    z-index: 4;
+}
+
+.showtimes-theater-header-overview {
+    overflow: hidden;
+}
+
+.showtimes-theater-details h3 {
+    margin: 10px 0px 0px 0px;
+}
+
+.showtimes-theater-add {
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 10px;
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+    text-align: center;
+    color: white;
+    font-family: Lucida;
+    font-size: 18px;
+    line-height: 17px;
+    vertical-align: top;
+    margin-top: 4px;
+}
+
+.showtimes-theater-details {
+    float: left;
+    width: 72%; /*in case ultra long theater addy*/
+}
+
+.showtimes-theater-location {
+    font-size: 12px;
+}
+
+.showtimes-theater-address {
+    color: #929292;
+    padding-right: 4px;
+    font-size: 12px;
+}
+
+.showtimes-theater-map, 
+.showtimes-theater-amenities {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.showtimes-theater-address-shortcuts {
+    display: inline-block;
+    margin-top: 3px;
+}
+
+.showtimes-theater-address-shortcuts .showtimes-theater-map {
+    margin: 0 4px 0 0;
+}
+
+.showtimes-theater-address-shortcuts .showtimes-theater-amenities {
+    margin: 0 0 0 4px;
+}
+
+.theater-amenities {
+    display: none;
+}
+
+.showtimes-theater-options {
+    float: right;
+    padding-top: 7px;
+}
+
+.showtimes-theater-option {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    text-indent: -999em;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+
+.showtimes-theater-option:hover {
+    opacity: 0.8;
+}
+
+.icon-option-print {
+    background: no-repeat scroll center center rgba(0, 0, 0, 0);
+    /* url("../../../static/img/icon-print-white.svg") */
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTlweCIgaGVpZ2h0PSIxOHB4IiB2aWV3Qm94PSIwIDAgMTkgMTgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE5IDE4OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRkZGRkZGO30NCjwvc3R5bGU+DQo8ZyBpZD0iWW91cl9JY29uXzFfIj4NCgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNS45LDE0LjF2MS4zaDcuM3YtMS4zSDUuOXogTTUuOSwxMS41djEuNGg3LjN2LTEuNEg1Ljl6IE0xLjUsMTIuNWgxLjV2NGMwLDEuMiwwLjMsMS41LDEuNSwxLjVoMTAuMg0KCQljMS4yLDAsMS41LTAuMiwxLjUtMS41di00aDEuNWMxLjIsMCwxLjUtMC4zLDEuNS0xLjVWNS41QzE5LDQuMywxOC44LDQsMTcuNSw0aC0xLjVWMS41YzAtMS4yLTAuMi0xLjUtMS41LTEuNUg0LjQNCgkJQzMuMiwwLDIuOSwwLjMsMi45LDEuNVY0SDEuNUMwLjIsNCwwLDQuMywwLDUuNVYxMUMwLDEyLjIsMC4zLDEyLjUsMS41LDEyLjV6IE0xNS4zLDE3LjNIMy43VjkuOWgxMS42VjE3LjN6IE0xNS40LDcuMg0KCQljMC0wLjUsMC40LTEsMC45LTFjMC41LDAsMC45LDAuNCwwLjksMWMwLDAuNS0wLjQsMS0wLjksMUMxNS44LDguMSwxNS40LDcuNywxNS40LDcuMnogTTMuOCwwLjhoMTEuNFY0SDMuOFYwLjh6Ii8+DQo8L2c+DQo8L3N2Zz4NCg==);
+}
+
+.icon-option-mobileticket {
+    background: no-repeat scroll center center rgba(0, 0, 0, 0);
+    /* url("../../../static/img/icon-mobile-white.svg") */
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTRweCIgaGVpZ2h0PSIyM3B4IiB2aWV3Qm94PSIwIDAgMTQgMjMiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE0IDIzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRkZGRkZGO30NCjwvc3R5bGU+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTEuNiwwSDIuNEMxLjEsMCwwLDEuMSwwLDIuNHYxOC4xQzAsMjEuOSwxLjEsMjMsMi40LDIzaDkuMmMxLjMsMCwyLjQtMS4xLDIuNC0yLjRWMi40QzE0LDEuMSwxMi45LDAsMTEuNiwweg0KCSBNNCwwLjhoNnYwLjdINFYwLjh6IE03LDIyYy0wLjYsMC0xLTAuNS0xLTFzMC41LTEsMS0xYzAuNiwwLDEsMC41LDEsMVM3LjYsMjIsNywyMnogTTEyLjUsMTloLTExVjIuM2gxMVYxOXoiLz4NCjwvc3ZnPg0K);
+}
+
+.icon-option-kiosk {
+    background: no-repeat scroll center center rgba(0, 0, 0, 0);
+    /* url("../../../static/img/icon-kiosk-white.svg") */
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjFweCIgaGVpZ2h0PSIyMXB4IiB2aWV3Qm94PSIwIDAgMjEgMjEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIxIDIxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRkZGRkZGO30NCjwvc3R5bGU+DQo8Zz4NCgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTguNywyMUgyLjNDMSwyMSwwLDIwLDAsMTguN1YyLjNDMCwxLDEsMCwyLjMsMGgxNi4zQzIwLDAsMjEsMSwyMSwyLjN2MTYuM0MyMSwyMCwyMCwyMSwxOC43LDIxeiBNMi4zLDEuMg0KCQljLTAuNiwwLTEuMiwwLjUtMS4yLDEuMnYxNi4zYzAsMC42LDAuNSwxLjIsMS4yLDEuMmgxNi4zYzAuNiwwLDEuMi0wLjUsMS4yLTEuMlYyLjNjMC0wLjYtMC41LTEuMi0xLjItMS4ySDIuM3oiLz4NCgk8cmVjdCB4PSIyLjkiIHk9IjMuMiIgY2xhc3M9InN0MCIgd2lkdGg9IjE1LjEiIGhlaWdodD0iMTEuNSIvPg0KCTxyZWN0IHg9IjIuOSIgeT0iMTYuNiIgY2xhc3M9InN0MCIgd2lkdGg9IjUuOSIgaGVpZ2h0PSIxLjEiLz4NCgk8cmVjdCB4PSIxMi4xIiB5PSIxNi42IiBjbGFzcz0ic3QwIiB3aWR0aD0iNS45IiBoZWlnaHQ9IjEuMSIvPg0KPC9nPg0KPC9zdmc+DQo=);
+}
+
+.showtimes-times-unavailable.icon-non-ticketing {
+    background-position: 0 50%;
+}
+
+.showtimes-theater-offer {
+    border: 2px dotted blue;
+    background-color: #179357;
+}
+
+/* Theater Showtimes */
+.showtimes-times {
+    position: relative;
+}
+
+.showtimes-times-header, 
+.showtimes-times-unavailable {
+    margin-bottom: 15px;
+    color: #929292;
+}
+
+.showtimes-times-header:before {
+    display: inline-block;
+    width: 25px;
+    height: 19px;
+    /* background:url(../../../static/img/icon-ticket.svg); */
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjVweCIgaGVpZ2h0PSIxOXB4IiB2aWV3Qm94PSIwIDAgMjUgMTkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1IDE5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojOTI5MjkyO30NCjwvc3R5bGU+DQo8Zz4NCgk8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjE4LjIsMy4zIDQuNSw3IDYuOCwxNS45IDIwLjUsMTIuMSAJIi8+DQoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTIyLjcsNC4zTDIxLjUsMEwwLDUuOWwxLjEsNC4zYzEuMi0wLjMsMi41LDAuNCwyLjgsMS42YzAuMywxLjItMC40LDIuNS0xLjYsMi44TDMuNSwxOUwyNSwxMy4xbC0xLjItNC40DQoJCWMtMS4yLDAuMy0yLjUtMC40LTIuOC0xLjZDMjAuNyw1LjksMjEuNCw0LjYsMjIuNyw0LjN6IE0yMS4zLDEyLjZMNi40LDE2LjZMMy43LDYuNmwxNC45LTQuMUwyMS4zLDEyLjZ6Ii8+DQo8L2c+DQo8L3N2Zz4NCg==);
+    content: '';
+    vertical-align: text-top;
+    margin-right: 6px;
+}
+
+/* Amenity Icons are in layout.css */
+
+/* Button States are in buttons.css*/
+
+.non-ticketing {
+    color: black;
+    display: inline-block;
+    width: 90px;
+    line-height: 25px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.non-ticketing.non-ticketing-past {
+    color: #929292;
+}
+
+/* Theater Pagination footer */
+.showtimes-pagination {
+    background-color: #262626;
+    text-align: center;
+    line-height: 45px;
+    position: relative;
+    color: #4aa7f6;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.showtimes-pagination-numbers {
+    letter-spacing: 2px;
+}
+
+.showtimes-pagination-numbers span {
+    color: white;
+}
+
+.showtimes-back {
+    position: absolute;
+    left: 30px;
+}
+
+.showtimes-next {
+    position: absolute;
+    right: 30px;
+}
+
+/* ---------------- */
+/* TSP/TLP Specific */
+/* ---------------- */
+
+/* Overall changes */
+.tsp .showtimes-theater,
+.tlp .showtimes-theater {
+    border: none;
+}
+
+.showtimes-movie-container {
+    /* Repeater [2.5] */
+    position: relative;
+    /*overflow:hidden;*/
+    background-color: white;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Movie Poster Left side */
+.showtimes-movie-container .showtimes-movie-overview {
+    float: left;
+    width: 340px;
+}
+
+.showtimes-movie-container .showtimes-theater-times-area {
+    /*
+    	float:right;
+    	width:620px;
+    	*/
+    margin-left: 340px;
+}
+
+.showtimes-movie-overview {
+    /*overflow:hidden;*/
+}
+
+.showtimes-movie-poster {
+    float: left;
+    background-color: black;
+    background-size: 134px 200px;
+    width: 134px;
+    height: auto;
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.showtimes-movie-poster img {
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    width: 100%;
+}
+
+.showtimes-movie-poster img:hover {
+    opacity: .65;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.showtimes-movie-detail {
+    margin-left: 134px ;
+    width: 203px;
+    padding: 15px 0px 0px 15px;
+}
+
+.showtimes-movie-add {
+    display: inline-block;
+    border: 1px solid #929292;
+    border-radius: 10px;
+    height: 16px;
+    width: 16px;
+    margin-left: 10px;
+    text-align: center;
+    color: #929292;
+    font-family: Lucida;
+    font-size: 13px;
+    line-height: 14px;
+    vertical-align: top;
+    margin-top: 5px;
+}
+
+.showtimes-movie-container .rating-container {
+    padding-bottom: 10px;
+    width: 98px;
+}
+
+.showtimes-movie-rating-runtime, .showtimes-movie-genre {
+    font-family: "Times New Roman", "Georgia", Serif;
+    font-style: italic;
+    line-height: 17px;
+}
+
+.tsp-no-showtimes {
+    padding: 20px;
+    font-size: 22px;
+}
+
+/*.tsp .movie-offers {
+	margin: -1px 0 6px 0;
+}*/
+
+.movie-offers-container {
+    position: relative;
+    background: none;
+}
+
+.global-offer-copy {
+    color: #fff;
+}
+
+.movie-offers .global-offer-img {
+    background: #ebebeb;
+    display: none;
+}
+
+/* Find additional theaters */
+
+.find-theaters-label {
+    display: inline;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.find-theaters select {
+    width: 300px;
+}
+
+.find-theaters-footer {
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    padding: 20px 0px;
+    background-color: white;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+.find-theaters-footer a {
+    color: #4c4c4c;
+    padding: 0px 15px;
+}
+
+.find-theaters-footer a:hover {
+    color: #333333;
+}
+
+.topMovieTimes {
+    float: left;
+    font-size: 14px;
+    padding-right: 3px;
+    list-style-type: none;
+}
+
+.topMovieTimesTitle {
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 15px;
+}
+
+/* Theater Coming Attractions (TSP Specific) */
+.theater-coming-attactions {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 17px 15px 12px 15px;
+}
+
+.theater-coming-attactions h4 {
+    display: inline-block;
+    line-height: 36px;
+    vertical-align: top;
+    margin-right: 15px;
+    color: #929292;
+}
+
+/* Ads Module */
+.ads-module {
+    margin-bottom: 20px;
+}
+
+/* Offers Module */
+.offers-module {
+    margin-bottom: 20px;
+}
+
+/* Content Wall */
+.content-item-container {
+    position: relative;
+}
+
+/* Rest of content wall css is in layout.css */
+
+/* ---------------- */
+/* Media Queries    */
+/* ---------------- */
+
+@media only screen and (min-width: 960px) {
+    /* space for the top search bar */
+    .page {
+        padding-bottom: 40px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .showtimes-theater-address-shortcuts {
+        display: block;
+        margin-top: 2px;
+    }
+}
+
+@media only screen and (max-width: 688px) {
+    .showtimes-theater-details {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .showtimes-movie-container .showtimes-theater-times-area {
+        margin-left: 0;
+    }
+
+    .showtimes-movie-container .showtimes-movie-overview {
+        width: 100%;
+        float: none;
+    }
+
+    .showtimes-movie-detail {
+        width: auto;
+    }
+}
+
